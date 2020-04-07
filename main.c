@@ -13,7 +13,11 @@ void display_notes(unsigned notes)
   { 
     note = notes << index * 4;
     note = note >> 28;
-    printf("%2u notes of Rs %4hu\n", note, denoms[index]);
+    
+    if(note)
+    {
+      printf("%2u notes of Rs %4hu\n", note, denoms[index]);
+    }
   }
 
 }
