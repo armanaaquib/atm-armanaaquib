@@ -3,7 +3,7 @@
 
 unsigned get_money(unsigned short amount)
 {
-  unsigned short denoms[8] = {2000, 500, 100, 50, 20, 10, 5, 1};
+  unsigned short denoms[] = DENOMS;
   unsigned short money = amount, index;
   unsigned notes = 0x0;
 
@@ -24,7 +24,7 @@ unsigned get_money(unsigned short amount)
 
 void display_notes(unsigned notes)
 {
-  unsigned short denoms[8] = {2000, 500, 100, 50, 20, 10, 5, 1};
+  unsigned short denoms[8] = DENOMS;
   unsigned short index;
   unsigned note;
 
