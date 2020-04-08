@@ -7,7 +7,7 @@ unsigned get_money(unsigned short amount)
   unsigned short money = amount, index;
   unsigned notes = 0x0;
 
-  if(money > 31999)
+  if(money > LIMIT)
   {
     return 0;
   }
@@ -35,7 +35,7 @@ void display_notes(unsigned notes)
     
     if(note)
     {
-      printf("%2u notes of Rs %4hu\n", note, denoms[index]);
+      printf("%-2u %-5s of Rs %-4hu\n", note, LABEL(note), denoms[index]);
     }
   }
 
