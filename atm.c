@@ -3,7 +3,7 @@
 
 unsigned get_money(unsigned short amount)
 {
-  unsigned short denoms[] = DENOMS;
+  denom denoms = DENOMS;
   unsigned short money = amount, index;
   unsigned notes = 0x0;
 
@@ -24,7 +24,7 @@ unsigned get_money(unsigned short amount)
 
 void display_notes(unsigned notes)
 {
-  unsigned short denoms[8] = DENOMS;
+  denom denoms = DENOMS;
   unsigned short index;
   unsigned note;
 
