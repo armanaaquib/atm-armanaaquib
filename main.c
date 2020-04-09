@@ -9,7 +9,7 @@ int main(void)
     unsigned notes = get_money(amounts[index]);
     printf("Amount: %hu\n", amounts[index]);
     display_notes(notes);
-    printf("\n");
+    NEW_LINE;
   }
 
   return 0;
