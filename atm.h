@@ -1,3 +1,6 @@
+typedef unsigned short denom[];
+typedef unsigned short ushort;
+
 /* This function should accept the amount needed in cash 
    as input and return the number of notes per each of
    the following denominations:
@@ -18,11 +21,12 @@
    2590 0x11012000
   31999 0xf3412014
 */
-unsigned int get_money(unsigned short int);
+unsigned int get_money(ushort);
 void display_notes(unsigned);
 
 #define DENOMS {2000, 500, 100, 50, 20, 10, 5, 1}
 #define LIMIT 31999
 #define LABEL(no_of_notes) no_of_notes > 1 ? "notes" : "note"
-
-typedef unsigned short denom[];
+#define OUT_OF_LIMIT(amount) if(amount > LIMIT)
+#define ITERATE(start, end) for(ushort index = start; index < end; index++)
+#define NEW_LINE printf("\n")

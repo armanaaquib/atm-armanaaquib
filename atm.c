@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include "atm.h"
 
-unsigned get_money(unsigned short amount)
+unsigned get_money(ushort amount)
 {
   denom denoms = DENOMS;
-  unsigned short money = amount, index;
+  ushort money = amount, index;
   unsigned notes = 0x0;
 
-  if(money > LIMIT)
+  OUT_OF_LIMIT(money)
   {
     return 0;
   }
 
-  for(index = 0; index < 8; index++)
+  ITERATE(0, 8)
   { 
     notes = notes << 4;
     notes = notes | (money / denoms[index]);
@@ -25,10 +25,10 @@ unsigned get_money(unsigned short amount)
 void display_notes(unsigned notes)
 {
   denom denoms = DENOMS;
-  unsigned short index;
+  ushort index;
   unsigned note;
 
-  for(index = 0; index < 8; index++)
+  ITERATE(0, 8)
   { 
     note = notes << index * 4;
     note = note >> 28;
